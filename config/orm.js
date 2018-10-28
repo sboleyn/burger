@@ -1,25 +1,38 @@
 var connection = require("./connection.js");
 
+// ?? is used for table and column names, it escapes them with backticks. ? is for ordinary values.
+
 var orm = {
-    selectAll: function(tableInput, colToSearch, valOfCol) {
-        var queryString = "SELECT * FROM ?? WHERE ?? = ?";
-        connection.query(queryString, [tableInput, colToSearch, valOfCol], function(err, result) {
-            if (err) throw err;
-            console.log(result);
+    selectAll: function (tableInput, cb) {
+        var queryString = "SELECT * FROM ??";
+        connection.query(queryString, [tableInput], function (err, result) {
+            if (err) {
+                throw err;
+
+            }
+            else {
+                cb(result)
+            }
         });
     },
-    insertOne: function(tableInput, vals) {
-        var queryString = "INSERT INTO ?? VALUES ?? ";
-        connection.query(queryString, [tableInput, vals], function(err, result) {
-            if (err) throw err;
-            console.log(result);
+    insertOne: function (tableInput, vals, cb) {
+        var queryString = "INSERT INTO ?? VALUES ?";
+        connection.query(queryString, [tableInput, vals], function (err, result) {
+            if (err) { throw err }
+            else {
+                cb(result)
+            }
         });
     },
-    updateOne: function(tableInput, col1, val1, valO) {
-        var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
-        connection.query(queryString, [tableInput, col1, val1, col1, valO], function(err, result) {
-            if (err) throw err;
-            console.log(result);
+    updateOne: function (tableInput, objColVals, condition, cb) {
+        var queryString = "UPDATE ?? SET ?? WHERE ?";
+        connection.query(queryString, [tableInput, objColVals, condition], function (err, result) {
+            if (err) {
+                throw err;
+            }
+            else {
+                cb(result)
+            }
         });
     }
 
