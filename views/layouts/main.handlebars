@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-		<title>Eat-Da-Burger</title>
-	</head>
-	<body>
+	<link rel="stylesheet" href="/assets/css/burger_style.css" type="text/css"/>
+	<title>Eat-Da-Burger</title>
+</head>
+
+<body>
+	<form class="container">
+		<div class="flex-item">
+			<img src="burger.png" id="burgerImg" alt="burger icon">
+		</div>
+		<h1 class="mainText">Eat-Da-Burger!</h1>
 		{{{ body }}}
-	</body>
+		<textarea rows="4" cols="50" id="textArea"></textarea>
+		<button id="submitBurgerButton" type="button">Submit</button>
+		<p>Enter a burger you want to eat. Click the "submit" button.</p>
+	</form>
+</body>
+
 </html>
