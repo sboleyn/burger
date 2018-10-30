@@ -58,6 +58,10 @@ body {
     margin-bottom: 1px;
 }
 
+.left_list {
+    width: 30vw;
+}
+
 .mainText {
     color: #f0653a;
 }

@@ -1,5 +1,5 @@
 <div id="flexFood">
-    <ol>
+    <ol class="left_list">
         {{#each burger}}
         {{#unless devoured}}
         <div class="foodContainer">
@@ -25,26 +25,3 @@
         {{/each}}
     </ol>
 </div>
-
-<script>
-    {{!-- $(".devourButton").on(“click”, function (event) {
-        var id = $(this).data("id");
-        console.log(id);
-        var hungerState = $(this).data("hungerState");
-
-        var newHungerState = {
-            devoured: 1
-            };
-        event.preventDefault();
-
-        $.ajax("/burgers"+ id, {
-            type: “PUT”,
-            data: newHungerState
-  }).then(function () {
-            // reload page to display devoured burger in proper column
-            location.reload();
-        });
-
-}); --}}
-
-</script>
