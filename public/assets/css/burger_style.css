@@ -7,7 +7,7 @@ body {
     height: 100px;
 }
 
-.container {
+.container-form {
     display: flex;
     flex-direction: column;
     margin: 0 auto;

@@ -7,7 +7,7 @@
                 {{id}}. {{burger_name}}
             </div>
 
-            <button class="devourButton" type="button">Devour it!</button>
+            <button class="devourButton" data-id="{{id}}" data-hungerState="{{devoured}}" type="submit">Devour it!</button>
         </div>
         {{/unless}}
         {{/each}}
@@ -25,3 +25,26 @@
         {{/each}}
     </ol>
 </div>
+
+<script>
+    {{!-- $(".devourButton").on(“click”, function (event) {
+        var id = $(this).data("id");
+        console.log(id);
+        var hungerState = $(this).data("hungerState");
+
+        var newHungerState = {
+            devoured: 1
+            };
+        event.preventDefault();
+
+        $.ajax("/burgers"+ id, {
+            type: “PUT”,
+            data: newHungerState
+  }).then(function () {
+            // reload page to display devoured burger in proper column
+            location.reload();
+        });
+
+}); --}}
+
+</script>
